@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 28-oct-2017 14:00:57 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="alquilercoches" dynamic-insert="false" dynamic-update="false" mutable="true" name="tablas.Vehiculos" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="vehiculos">
+        <id name="matricula" type="string">
+            <column length="7" name="matricula"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="marca" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="marca" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="modelo" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="modelo" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="imagen" optimistic-lock="true" type="string" unique="false">
+            <column name="imagen" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="averias" optimistic-lock="true" type="string" unique="false">
+            <column name="averias" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="extras" optimistic-lock="true" type="string" unique="false">
+            <column name="extras" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="alquilers" optimistic-lock="true" sort="unsorted" table="alquiler">
+            <key on-delete="noaction">
+                <column length="7" name="matricula" not-null="true"/>
+            </key>
+            <one-to-many class="tablas.Alquiler" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
