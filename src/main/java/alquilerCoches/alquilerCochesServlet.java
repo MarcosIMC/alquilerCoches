@@ -36,4 +36,12 @@ public class alquilerCochesServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+	}
+
+	
+	
 }
