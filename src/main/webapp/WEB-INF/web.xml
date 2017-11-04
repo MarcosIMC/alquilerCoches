@@ -16,8 +16,18 @@
 	</init-param> 
   	
   </servlet>
+  <servlet>
+  	<servlet-name>registroUsuarioServlet</servlet-name>
+  	<display-name>registroUsuarioServlet</display-name>
+  	<description></description>
+  	<servlet-class>alquilerCoches.registroUsuarioServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>alquilerCochesServlet</servlet-name>
   	<url-pattern>/alquilerMoya</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>registroUsuarioServlet</servlet-name>
+  	<url-pattern>/registroUsuarioServlet</url-pattern>
   </servlet-mapping>
 </web-app>

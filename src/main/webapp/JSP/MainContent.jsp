@@ -17,5 +17,6 @@
 	<a href="<%= base %>?peticion=vehiculos">Vehículos</button>
 	<a href="<%= base %>?peticion=clientes">Clientes</button>
 
+
 </body>
 </html>

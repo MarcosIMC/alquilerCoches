@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 28-oct-2017 14:00:57 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="alquilercoches" dynamic-insert="false" dynamic-update="false" mutable="true" name="tablas.Alquiler" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="alquiler">
+        <id name="idAlquiler" type="java.lang.Integer">
+            <column name="idAlquiler"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="tablas.Usuario" embed-xml="true" fetch="select" insert="true" name="usuario" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="9" name="dniCliente" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="tablas.Vehiculos" embed-xml="true" fetch="select" insert="true" name="vehiculos" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="7" name="matricula" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="fechaEntrega" optimistic-lock="true" type="date" unique="false">
+            <column length="0" name="fechaEntrega" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaDevolucion" optimistic-lock="true" type="date" unique="false">
+            <column length="0" name="fechaDevolucion" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="precio" optimistic-lock="true" type="float" unique="false">
+            <column name="precio" not-null="true" precision="12" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>

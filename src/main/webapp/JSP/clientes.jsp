@@ -4,9 +4,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Alta de clientes</title>
 </head>
 <body>
+
+	<form action="registroUsuarioServlet" method="post">
+		DNI -->
+		<input name="dni" type="text">
+		<br>
+		Nombre -->
+		<input name="nombre" type="text">
+		<br>
+		Apellidos -->
+		<input name="apellidos" type="text">
+		<br>
+		Edad -->
+		<input name="edad" type="text">
+		<br>
+		Email -->
+		<input name="email" type="text">
+		<br>
+		<input id="submit" type="submit" value="Registrar usuario">
+	</form>
 
 </body>
 </html>
